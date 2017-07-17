@@ -1,23 +1,12 @@
-var cool = require('cool-ascii-faces');
-var express = require('express');
-var app = express();
+var randomImageGenerator = require('random-image-generator'),
+    fs = require('fs');
 
-app.set('port', (process.env.PORT || 5000));
-
-app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-    response.render('pages/index')
-});
-
-app.get('/cool', function(request, response) {
-    response.send(cool());
-});
-
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
+/**
+ * Takes a width and height parameter
+ * Returns a Buffer containing a JPEG image
+ */
+randomImageGenerator(800, 600, function(err, image) {
+    fs.writeFile('random-image.jpg', image, function(err) {
+        // done, hopefully
+    });
 });
