@@ -1,19 +1,8 @@
 var http = require("http");
-var randomImageGenerator = require('random-image-generator'),
-    fs = require('fs');
 
 
 http.createServer(function(request, response) {
-    randomImageGenerator(800, 600, function(err, image) {
-        fs.writeFile('random-image.jpg', image, function(err) {
-            // done, hopefully
-        });
-    });
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello, World!");
+    response.end();
 }).listen(process.env.PORT || 3000);
-
-
-
-/**
- * Takes a width and height parameter
- * Returns a Buffer containing a JPEG image
- */
