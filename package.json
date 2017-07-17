@@ -1,0 +1,26 @@
+{
+  "name": "heroku-random-picture",
+  "version": "1.0.0",
+  "description": "A sample Node.js app that displays random picture ang grabs params",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pankist/heroku-random-picture"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "image"
+  ],
+  "author": "Andrey Shore",
+  "contributors": [
+    "Andrey Shore <andruka@gmail.com>"
+  ],
+  "license": "MIT"
+}
